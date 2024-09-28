@@ -17,3 +17,5 @@ Finish docker setup: https://docs.docker.com/engine/install/linux-postinstall/
 Clone this repository and run ```docker compose up -d``` in the main directory. Navigate to http://homeassistant.local:8123/ and complete the onboarding process.
 
 You should now have a basic Home Assistant setup running.
+
+## Install HACS
