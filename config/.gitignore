@@ -3,3 +3,5 @@ home-assistant.log*
 home-assistant_v2.db*
 secrets.yaml
 .storage
+__pycache__
+custom_components
