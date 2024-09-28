@@ -19,3 +19,5 @@ Clone this repository and run ```docker compose up -d``` in the main directory. 
 You should now have a basic Home Assistant setup running.
 
 ## Install HACS
+
+Follow instructions on https://www.hacs.xyz/docs/use/download/download/ and https://www.hacs.xyz/docs/use/configuration/basic/
