@@ -12,6 +12,7 @@ It is safe to run ```sudo apt update``` and ```sudo apt upgrade``` to update the
 # Home Assistant setup (with docker compose)
 
 Install docker: https://docs.docker.com/engine/install/debian/
+Finish docker setup: https://docs.docker.com/engine/install/linux-postinstall/
 
 Clone this repository and run ```docker compose up -d``` in the main directory. Navigate to http://homeassistant.local:8123/ and complete the onboarding process.
 
