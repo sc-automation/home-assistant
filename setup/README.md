@@ -16,6 +16,9 @@ Finish docker setup: https://docs.docker.com/engine/install/linux-postinstall/
 
 Clone this repository and run ```docker compose up -d``` in the main directory. Navigate to http://homeassistant.local:8123/ and complete the onboarding process.
 
+[!TIP]
+I opted to disable the ```privileged: true``` option in the homeassistant service. It is really not needed except for some special circumstances (and inexperienced users). But it creates a lot of trouble when you want to update and backup your configuration with Git, since the whole ```config``` directory will be owned by root. This is just bad and you should never do this.
+
 You should now have a basic Home Assistant setup running.
 
 ## Install HACS
