@@ -9,6 +9,7 @@ frontend:
 automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
+template: !include custom_yaml/templates.yaml
 
 lovelace:
   mode: storage
