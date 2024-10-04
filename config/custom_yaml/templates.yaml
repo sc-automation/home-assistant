@@ -10,3 +10,36 @@
       unit_of_measurement: "kWh"
       device_class: energy
       state_class: total_increasing
+- sensor:
+  - name: "Tasmota Wärmepumpe Bezug gesamt"
+    unique_id: sensor.tasmota_warmepumpe_bezug_gesamt
+    icon: mdi:lightning-bolt
+    state: >
+      {{states('sensor.tasmota_wp_mt681_total_in')}}
+    unit_of_measurement: "kWh"
+    device_class: energy
+    state_class: total_increasing
+  - name: "Tasmota Haus Bezug gesamt"
+    unique_id: sensor.tasmota_haus_bezug_gesamt
+    icon: mdi:lightning-bolt
+    state: >
+      {{states('sensor.tasmota_haus_mt681_total_in')}}
+    unit_of_measurement: "kWh"
+    device_class: energy
+    state_class: total_increasing
+  - name: "Tasmota Haus Einspeisung gesamt"
+    unique_id: sensor.tasmota_haus_einspeisung_gesamt
+    icon: mdi:lightning-bolt
+    state: >
+      {{states('sensor.tasmota_haus_mt681_total_out')}}
+    unit_of_measurement: "kWh"
+    device_class: energy
+    state_class: total_increasing
+  - name: "Tasmota aktuelle Leistung"
+    unique_id: sensor.tasmota_aktuelle_leistung
+    icon: mdi:lightning-bolt
+    state: >
+      {{states('sensor.tasmota_haus_mt681_power_cur')|float + states('sensor.tasmota_wp_mt681_power_cur')|float}}
+    unit_of_measurement: "W"
+    device_class: power
+    state_class: measurement
