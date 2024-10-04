@@ -9,3 +9,13 @@ frontend:
 automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
+
+lovelace:
+  mode: storage
+  dashboards:
+    energy_dashboard:
+      mode: yaml
+      title: Energie
+      icon: mdi:home-lightning-bolt-outline
+      show_in_sidebar: true
+      filename: custom_yaml/dashboards/energy.yaml
