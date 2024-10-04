@@ -2,4 +2,78 @@ title: Energie
 views:
   - title: Übersicht
     cards:
+      #- type: custom:energy-period-selector-plus
+      #  card_background: false
+      #  today_button: true
+      #  prev_next_buttons: true
+      #  today_button_type: text
+      #  period_buttons:
+      #    - day
+      #    - week
+      #    - month
+      #    - year
+      - type: energy-date-selection
+      - type: custom:energy-flow-card-plus
+        entities:
+          battery:
+            show: false
+          grid:
+            entity:
+              consumption: sensor.tasmota_haus_bezug_gesamt
+              production: sensor.tasmota_haus_einspeisung_gesamt
+            icon: mdi:transmission-tower
+            color_icon: true
+            color_circle: true
+          solar:
+            entity: sensor.fritz_dect_pv_anlage_energie
+            display_zero_state: true
+          home:
+            color_value: true
+            color_icon: true
+            name: Haus
+          individual1:
+            entity: sensor.kasicharger_bezug_gesamt_korrigiert
+            name: Auto
+            icon: mdi:ev-plug-type2
+            display_zero: true
+            color_icon: true
+            display_zero_state: true
+            inverted_animation: false
+            color_value: true
+          individual2:
+            entity: sensor.shellypmminig3_ecda3bc34ffc_energy
+            name: 'Klimaanlage '
+            icon: mdi:hvac
+            color_value: true
+            color_icon: true
+            display_zero: true
+        wh_kwh_threshold: 0
+        kwh_decimals: 1
+        clickable_entities: true
+        display_zero_lines: true
+        use_new_flow_rate_model: true
+      - type: custom:energy-flow-card-plus
+        entities:
+          battery:
+            show: false
+          grid:
+            entity:
+              consumption: sensor.tasmota_warmepumpe_bezug_gesamt
+              production: ''
+            icon: mdi:transmission-tower
+            color_icon: true
+            color_circle: true
+          solar:
+            show: false
+          home:
+            color_value: grid
+            color_icon: grid
+            entity: sensor.tasmota_warmepumpe_bezug_gesamt
+            name: Altherma 3
+            icon: mdi:heat-pump-outline
+        wh_kwh_threshold: 0
+        kwh_decimals: 1
+        clickable_entities: true
+        display_zero_lines: true
+        use_new_flow_rate_model: true
       

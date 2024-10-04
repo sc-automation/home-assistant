@@ -13,6 +13,9 @@ template: !include custom_yaml/templates.yaml
 
 lovelace:
   mode: storage
+  resources:
+    - url: /local/energy-entity-row.js
+      type: module
   dashboards:
     energy-dashboard:
       mode: yaml
