@@ -27,6 +27,8 @@ views:
           solar:
             entity: sensor.fritz_dect_pv_anlage_energie
             display_zero_state: true
+            color_icon: true
+            color_circle: true
           home:
             color_value: true
             color_icon: true
@@ -66,14 +68,62 @@ views:
           solar:
             show: false
           home:
-            color_value: grid
-            color_icon: grid
             entity: sensor.tasmota_warmepumpe_bezug_gesamt
-            name: Altherma 3
+            name: Wärmepumpe
             icon: mdi:heat-pump-outline
+            color_icon: true
+            color_circle: true
         wh_kwh_threshold: 0
         kwh_decimals: 1
         clickable_entities: true
         display_zero_lines: true
         use_new_flow_rate_model: true
-      
+      - type: custom:power-flow-card-plus
+        entities:
+          battery:
+            show: false
+          grid:
+            color_icon: true
+            entity: sensor.tasmota_aktuelle_leistung
+            icon: mdi:transmission-tower
+            color_value: true
+            color_circle: true
+          solar:
+            entity: sensor.fritz_dect_pv_anlage_leistung
+            display_zero_state: true
+            color_value: true
+            color_icon: true
+          home:
+            color_value: true
+            color_icon: true
+            secondary_info: {}
+          individual:
+            - entity: sensor.kasicharger_power_total
+              secondary_info: {}
+              name: Auto
+              icon: mdi:car
+              display_zero_state: true
+              display_zero: true
+              color_value: true
+              color_icon: true
+            - entity: sensor.tasmota_wp_mt681_power_cur
+              secondary_info: {}
+              name: Wärmepumpe
+              icon: mdi:heat-pump-outline
+              display_zero_state: true
+              display_zero: true
+              color_value: true
+              color_icon: true
+            - entity: sensor.shellypmminig3_ecda3bc34ffc_power
+              secondary_info: {}
+              name: 'Klimaanlage'
+              color_value: true
+              color_icon: true
+              display_zero: true
+              icon: mdi:hvac        
+        kw_decimals: 1
+        clickable_entities: true
+        display_zero_lines: true
+        use_new_flow_rate_model: true
+        watt_threshold: 1000
+        transparency_zero_lines: 0
