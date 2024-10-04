@@ -13,7 +13,7 @@ scene: !include scenes.yaml
 lovelace:
   mode: storage
   dashboards:
-    energy_dashboard:
+    energy-dashboard:
       mode: yaml
       title: Energie
       icon: mdi:home-lightning-bolt-outline
