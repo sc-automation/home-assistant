@@ -1,0 +1,114 @@
+- name: "DAIKIN HomeHub"
+  type: tcp
+  host: 172.16.1.6
+  port: 502
+  switches:
+    - name: "HomeHub Heizung / Kühlung aktiviert"
+      address: 3
+      command_on: 1
+      command_off: 0
+      write_type: holding
+      verify:
+    - name: "HomeHub geräuscharmer Betrieb"
+      address: 8
+      command_on: 1
+      command_off: 0
+      write_type: holding
+      verify:
+    - name: "HomeHub Brauchwasser-Warmhaltung aktiviert"
+      address: 11
+      command_on: 1
+      command_off: 0
+      write_type: holding
+      verify:
+    - name: "HomeHub Brauchwasser-Zusatzheizung aktiviert"
+      address: 12
+      command_on: 1
+      command_off: 0
+      write_type: holding
+      verify:
+  binary_sensors:
+    - name: "HomeHub Zirkulationspumpe läuft"
+      address: 29
+      input_type: input
+    - name: "HomeHub Verdichter läuft"
+      address: 30
+      input_type: input
+    - name: "HomeHub Zusatzheizung läuft"
+      address: 31
+      input_type: input
+    - name: "HomeHub Desinfektionsbetrieb läuft"
+      address: 32
+      input_type: input
+    - name: "HomeHub Enteisung / Start läuft"
+      address: 34
+      input_type: input
+    - name: "HomeHub Warmstart läuft"
+      address: 35
+      input_type: input
+    - name: "HomeHub Brauchwasser-Warmhaltung läuft"
+      address: 51
+      input_type: input
+    - name: "HomeHub Heizung / Kühlung läuft"
+      address: 52
+      input_type: input
+  sensors:
+    - name: "HomeHub Temperatur Vorlauf Platten-Wärmetauscher"
+      address: 39
+      input_type: input
+      device_class: temperature
+      scale: 0.01
+      precision: 2
+      unit_of_measurement: °C
+    - name: "HomeHub Temperatur Vorlauf Reserveheizung"
+      address: 40
+      input_type: input
+      device_class: temperature
+      scale: 0.01
+      precision: 2
+      unit_of_measurement: °C
+    - name: "HomeHub Temperatur Rücklauf Heizung / Kühlung"
+      address: 41
+      input_type: input
+      device_class: temperature
+      scale: 0.01
+      precision: 2
+      unit_of_measurement: °C
+    - name: "HomeHub Temperatur Brauchwasser"
+      address: 42
+      input_type: input
+      device_class: temperature
+      scale: 0.01
+      precision: 2
+      unit_of_measurement: °C
+    - name: "HomeHub Temperatur außen"
+      address: 43
+      input_type: input
+      device_class: temperature
+      scale: 0.01
+      precision: 2
+      unit_of_measurement: °C
+    - name: "HomeHub Temperatur Kältemittel"
+      address: 44
+      input_type: input
+      device_class: temperature
+      scale: 0.01
+      precision: 2
+      unit_of_measurement: °C
+    - name: "HomeHub Durchflussrate"
+      address: 48
+      input_type: input
+      device_class: volume_flow_rate
+      scale: 0.01
+      precision: 2
+      unit_of_measurement: L/min
+    - name: "HomeHub Stromverbrauch Wärmepumpe"
+      address: 50
+      input_type: input
+      device_class: power
+      scale: 0.01
+      precision: 2
+      unit_of_measurement: kW
+    - name: "HomeHub Betriebsmodus Heizung / Kühlung"
+      address: 2
+      input_type: holding

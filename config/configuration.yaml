@@ -10,6 +10,7 @@ automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
 template: !include custom_yaml/templates.yaml
+modbus: !include custom_yaml/modbus/daikin-homehub.yaml
 
 lovelace:
   mode: storage
